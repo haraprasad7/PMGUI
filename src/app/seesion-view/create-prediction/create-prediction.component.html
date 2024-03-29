@@ -1,0 +1,43 @@
+<div class="create-prediction">
+    <div class="controls">
+        <button mat-raised-button color="primary" (click)="createPollClick()">Create Poll</button>
+        <button mat-raised-button color="warn"  (click)="deletePoll()">Delete Poll</button>
+    </div>
+    <div *ngIf="createPoll" class="create-poll">
+        <div class="poll-title">
+            <form #form="ngForm">
+                <input type="text" name="title" placeholder="Poll question" [(ngModel)]="pollTitle">
+            </form>
+        </div>
+        <div class="options">
+            <div class="option" *ngIf="tracker > 0">
+                <input placeholder="Option A" [(ngModel)]="pollOptionsA">
+            </div>
+            <div class="option" *ngIf="tracker > 1">
+                <input placeholder="Option B" [(ngModel)]="pollOptionsB">
+            </div>
+            <div class="option" *ngIf="tracker > 2">
+                <input placeholder="Option C" [(ngModel)]="pollOptionsC">
+            </div>
+            <div class="option" *ngIf="tracker > 3">
+                <input placeholder="Option D" [(ngModel)]="pollOptionsD">
+            </div>
+        </div>
+        <div class="buttons">
+        <div class="add-option" *ngIf="!hideAddButton">
+            <button mat-mini-fab color="warn" (click)="addOption()">+
+            </button>
+        </div>
+        <div class="delete-option" *ngIf="showSub">
+            <button mat-mini-fab color="warn" (click)="subOption()">-
+            </button>
+        </div>
+        </div>
+        <div class="points">
+            <input type="number" placeholder="points" [(ngModel)]="points"><span>Points</span>
+        </div>
+        <div class="submit">
+            <button mat-raised-button (click)="submitPoll()">Submit Poll</button>
+        </div>
+    </div>
+</div>

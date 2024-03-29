@@ -1,0 +1,16 @@
+.chat-logger {
+    overflow-y: auto;
+    text-align: justify;
+    height: 250px
+}
+
+.typing-box-send {
+    margin:5px;
+    display: flex;
+    gap:5px;
+    align-items: flex-end;
+}
+
+.send {
+    margin-bottom: 6px;
+}

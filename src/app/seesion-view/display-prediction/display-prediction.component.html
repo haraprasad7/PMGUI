@@ -1,0 +1,27 @@
+<div class="display-prediction">
+    <div class="timeWrap">
+    <div class="timer">
+        {{timer}}
+    </div>
+</div>
+    <div class="predictionTitle">
+        {{predictionObject.predictionTitle}}
+    </div>
+    <div class="predictionOptions">
+        <div class="options">
+            <div *ngFor="let option of keys">
+                <div *ngIf="!showUserList" class="optiontext">
+                <input [disabled]="disableRadio" [value]="option" [(ngModel)]="radioSelect" type="radio">
+                 {{predictionObject.predictionOptions[option].optionText}}
+                </div>
+                <div *ngIf="showUserList" class="options-selected">
+                    {{predictionObject.predictionOptions[option].optionText}}
+                </div>
+                <div *ngIf="showUserList" class="users-vote">
+                    <div class="user" *ngFor="let user of predictionObject.predictionOptions[option].usersList">
+                    {{user.username}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

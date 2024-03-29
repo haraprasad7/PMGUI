@@ -1,0 +1,43 @@
+<div class="sessionview">
+    <div class="session-view-contianer">
+        <div class="ingame-game-header">
+            <app-game-header></app-game-header>
+        </div>
+        <div class="userHeader">
+            <div class="username">
+                {{user.username}}
+            </div>
+            <div class="room">
+                {{roomID}}<span>
+                    <img class="copy-icon" src="..\..\assets\copy.png" style="height: 20px; width: 20px;" (click)="copy()">
+                </span>
+            </div>
+            <div class="leave">
+                <button mat-raised-button color="warn" (click)="leaveRoom()">Leave</button>
+            </div>
+        </div>
+        <div *ngIf="isHost" class="create-prediction">
+            <app-create-prediction [predExists]="livePrediction" (submitPollEvent)="pollData($event)"
+            (deletePollEvent)="deletePoll()"></app-create-prediction>
+        </div>
+        <div *ngIf="showSubmitAnswers"  class="host-prediction">
+            <app-host-display-prediction [predictionObject]="predictionObject"
+            (submitAnswerEvent)="submitAnswer($event)"></app-host-display-prediction>
+        </div>
+        <div *ngIf="pollExists" class="display-prediction">
+            <app-display-prediction [showUserList]="showUserList" [predictionObject]="predictionObject"
+            (submitRespose)="userChoice($event)"></app-display-prediction>
+        </div>
+        <div class="logger">
+            <app-game-logger [messages]="logMessages"></app-game-logger>
+        </div>
+        <div class="chat-stand">
+            <div class="chat">
+                <app-chat [user]="user"></app-chat>
+            </div>
+            <div class="stand">
+                <app-standing [users]="usersGroup"></app-standing>
+            </div>
+        </div>
+    </div>
+</div>

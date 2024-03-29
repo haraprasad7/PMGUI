@@ -1,0 +1,54 @@
+.display-prediction {
+    display: flex;
+    flex-direction: column;
+    background-color: burlywood;
+}
+
+.timer {
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid green;
+    margin: 5px;
+}
+
+.predictionTitle {
+    color: rgb(99, 40, 40);
+    font-size: 1rem;
+    margin:5px;
+    font-weight: bolder;
+}
+
+.optiontext {
+    background-color: white;
+    border: rgb(6, 5, 5);
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.predictionOptions {
+    margin:5px;
+}
+
+.timeWrap {
+    display: flex;
+    justify-content: center;
+}
+
+.users-vote {
+    display: flex;
+    gap:2px;
+    font-size: 0.7rem;
+}
+
+.options-selected {
+    font-weight: bold;
+
+}

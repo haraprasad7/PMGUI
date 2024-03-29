@@ -1,0 +1,6 @@
+.standing {
+    margin-right: 5px;
+    overflow-y: auto;
+    text-align: right;
+    height: 300px;
+}

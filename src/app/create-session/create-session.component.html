@@ -1,0 +1,40 @@
+<div class="game-create-flex">
+    <div class="game-header">
+       <app-game-header></app-game-header>
+    </div>
+    <div class="create-join-game-container">
+        <div class="create-game-wrapper">
+            <label class="inline-border-label">Create Session</label>
+            <div class="create-game">
+                <div class="input-text">
+                    <form #form="ngForm">
+                        <input autocomplete="off" maxlength="8" name="username" placeholder="username" [(ngModel)]="createUsername" appUsernameAlpha>
+                    </form>
+                </div>
+                <div>
+                    <button mat-raised-button color="warn" (click)="createSession()">Create Session</button>
+                </div>
+            </div>
+        </div>
+        <div class="join-game-wrapper">
+            <label class="inline-border-label">Join Session</label>
+            <div class="join-game">
+            <div class="input-text">
+                <form #form="ngForm">
+                    <input maxlength="5" autocomplete="off" name="roomID" placeholder="room ID" [(ngModel)]="roomNumber">
+                </form>
+            </div>
+            <div class="input-text">
+                <form #form="ngForm">
+                    <input maxlength="8" autocomplete="off" name="joinUsername" placeholder="username" [(ngModel)]="joinUsername" appUsernameAlpha>
+                </form>
+            </div>
+            <div>
+                <button mat-raised-button color="warn" (click)="joinSession()">Join Session</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    
+    

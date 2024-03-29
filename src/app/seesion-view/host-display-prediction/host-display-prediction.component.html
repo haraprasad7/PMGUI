@@ -1,0 +1,18 @@
+<div class="display-prediction">
+    <div>Select the Correct Answers NOW</div>
+    <div class="predictionTitle">
+        {{predictionObject.predictionTitle}}
+    </div>
+    <div class="predictionOptions">
+        <div class="options">
+            <div *ngFor="let option of keys">
+                <div class="optiontext">
+                <input [(ngModel)]="predictionObject.predictionOptions[option].optionValid" (change)="optionSelection($event)" type="checkbox"> {{predictionObject.predictionOptions[option].optionText}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="submit">
+        <button mat-raised-button (click)="submitAnswer()">Submit Answers</button>
+    </div>
+</div>

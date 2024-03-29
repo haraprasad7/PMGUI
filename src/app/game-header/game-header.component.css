@@ -1,0 +1,12 @@
+.header-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap:1rem;
+    align-items: baseline;
+    margin-top: 1rem;
+    padding: 10px;   
+}
+
+.text {
+    font-family: fantasy;
+}

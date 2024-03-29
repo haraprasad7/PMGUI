@@ -1,0 +1,51 @@
+.controls {
+     display: flex;
+     justify-content: center;
+     gap:2rem;
+}
+
+.create-poll {
+    margin: 10px;
+}
+.poll-title input {
+    height: 2rem;
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid blue;
+}
+
+input:focus {
+    outline: none;
+  }
+
+.options {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.options input {
+    width: 60%;
+    border: none;
+    border-bottom: 3px solid red;
+
+}
+
+.points input {
+    width: 30%;
+    border: none;
+    border-bottom: 3px solid red;
+}
+
+.buttons {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+}
+
+.submit button {
+    margin-top: 8px;
+    background-color: green;
+}
+
