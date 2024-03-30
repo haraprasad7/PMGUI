@@ -6,7 +6,7 @@ import { io } from "socket.io-client";
   providedIn: 'root'
 })
 export class GameComService {
-  private socket  = io('http://18.61.71.250:3000',  {rejectUnauthorized: false});
+  private socket  = io('https://18.61.71.250:3000',  {rejectUnauthorized: false});
   private user = {};
   private roomID = '';
   private sessionState:any = {};
