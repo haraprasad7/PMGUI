@@ -40,7 +40,7 @@ export class CreateSessionComponent {
       this.gameComService.setUser(data.user);
       this.gameComService.setSessionState(data.gameState);
       this.setCookieWithExpiration(data.user.room , data.user.username);
-      this.router.navigateByUrl('/play');
+      this.router.navigateByUrl('/play/');
     });
 
     this.sessionJoined = this.gameComService.sessionJoined().subscribe(data => {
@@ -48,7 +48,7 @@ export class CreateSessionComponent {
       this.gameComService.setUser(data.user);
       this.gameComService.setSessionState(data.gameState);
       this.setCookieWithExpiration(data.user.room , data.user.username);
-      this.router.navigateByUrl('/play');
+      this.router.navigateByUrl('/play/');
     });
   }
 

@@ -32,7 +32,7 @@ export class SeesionViewComponent {
      let message = "Welcome " + this.user.username;
      this.logMessages.push(message)
     if(!this.user.username) {
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/home/');
 
     }
     this.roomID = this.gameComService.getRoomID();
@@ -139,7 +139,7 @@ export class SeesionViewComponent {
 
   leaveRoom() {
     this.gameComService.deleteCookie = true;
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/home/');
   }
   copy() {
     const successful = this.clipboard.copy(this.roomID);

@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateSessionComponent } from './create-session/create-session.component';
 import { SeesionViewComponent } from './seesion-view/seesion-view.component';
 
-const routes: Routes = [ {path:'home', component:CreateSessionComponent},
-{path:'play', component:SeesionViewComponent},
-{path:'**',component:CreateSessionComponent}];
+const routes: Routes = [ {path:'home/', component:CreateSessionComponent},
+{path:'play/', component:SeesionViewComponent},
+{path: '',   redirectTo: '/home/', pathMatch: 'full'},
+{path:'**',component:CreateSessionComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
