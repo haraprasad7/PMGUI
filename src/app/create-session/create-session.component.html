@@ -11,6 +11,9 @@
                         <input autocomplete="off" maxlength="8" name="username" placeholder="username" [(ngModel)]="createUsername" appUsernameAlpha>
                     </form>
                 </div>
+                <div class="error">
+                    {{createErrorMessage}}
+                </div>
                 <div>
                     <button mat-raised-button color="warn" (click)="createSession()">Create Session</button>
                 </div>
@@ -28,6 +31,9 @@
                 <form #form="ngForm">
                     <input maxlength="8" autocomplete="off" name="joinUsername" placeholder="username" [(ngModel)]="joinUsername" appUsernameAlpha>
                 </form>
+            </div>
+            <div class="error">
+                {{joinErrorMessage}}
             </div>
             <div>
                 <button mat-raised-button color="warn" (click)="joinSession()">Join Session</button>

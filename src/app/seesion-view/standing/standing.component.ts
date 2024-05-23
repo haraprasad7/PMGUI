@@ -9,17 +9,26 @@ export class StandingComponent {
   @Input() users:any = {} ;
   @ViewChild('standing') scrollableDiv!: ElementRef;
   keys:any = [];
+  usersArray:any = [];
 
   constructor() { }
 
   ngOnInit() {
     if(this.users) {
+      console.log(this.users);
       this.keys = Object.keys(this.users);
-      }
+      console.log(this.keys);
+      this.convertToArray();
+      this.sortUsersArray();
+    }
+    
   }
   ngOnChanges() {
     if(this.users) {
+    console.log(this.users);
     this.keys = Object.keys(this.users);
+    this.convertToArray();
+    this.sortUsersArray();
     }
   }
 
@@ -33,4 +42,17 @@ export class StandingComponent {
     } catch(err) { }
   }
 
+  convertToArray() {
+    this.usersArray = [];
+    this.keys.forEach( (key: string | number) => {
+      this.usersArray.push(this.users[key]);
+    });
+    console.log(this.usersArray);
+  }
+
+  sortUsersArray() {
+    this.usersArray.sort((userA: any, userB:any) => 
+      userB.points - userA.points);
+      console.log(this.usersArray);
+    }
 }

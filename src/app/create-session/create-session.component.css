@@ -62,3 +62,9 @@
     height: 2rem;
     width: 100%;
 }
+
+.error {
+    font-size: 0.7rem;
+    color: red;
+    font-weight: bold;
+}

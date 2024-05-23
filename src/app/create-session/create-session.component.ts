@@ -21,13 +21,18 @@ export class CreateSessionComponent {
   roomNumber ='';
   sessionCreated: Subscription | any;
   sessionJoined: Subscription | any;
+  infoListener: Subscription | any;
+  errorListener: Subscription | any;
   user='';
   room = '';
+  joinErrorMessage = '';
+  createErrorMessage = '';
 
 
   ngOnInit() {
     if(this.gameComService.deleteCookie) {
-      this.cookie.deleteAll();
+      this.cookie.delete('room','/');
+      this.cookie.delete('user','/');
       this.gameComService.deleteCookie = false;
     }
     this.room = this.cookie.get('room');
@@ -50,17 +55,35 @@ export class CreateSessionComponent {
       this.setCookieWithExpiration(data.user.room , data.user.username);
       this.router.navigateByUrl('/play/');
     });
+
+    this.infoListener = this.gameComService.infoListener().subscribe(data => {
+      this.createErrorMessage = data.infoMessage;
+    });
+
+    this.errorListener = this.gameComService.infoListener().subscribe(data => {
+      this.joinErrorMessage = data.errorMessage;
+    });
   }
 
   joinSession() {
     if(this.joinUsername.length > 0 && this.roomNumber.length > 0) {
       this.gameComService.joinSession(this.joinUsername, this.roomNumber, false);
     }
+    if (this.roomNumber.length !== 5) {
+      this.joinErrorMessage = 'Enter valid rrom number'
+    }
+    if (this.joinUsername.length < 1 && this.roomNumber.length === 5) {
+      this.joinErrorMessage = "Please Enter Username";
+    }
+
   }
 
   createSession() {
     if(this.createUsername.length > 0) {
       this.gameComService.createSession(this.createUsername);
+    }
+    else {
+      this.createErrorMessage = 'Please Enter Username';
     }
   }
 
@@ -68,10 +91,13 @@ export class CreateSessionComponent {
     // Calculate the expiration time
     const expirationDate = new Date();
     expirationDate.setTime(expirationDate.getTime() + (4 * 60 * 60 * 1000)); // 4 hours in milliseconds
-  
     // Set the cookie with the calculated expiration time
-    this.cookie.set('room',room, expirationDate);
-    this.cookie.set('user',user, expirationDate);
+    this.cookie.set('room',room, expirationDate,'/');
+    this.cookie.set('user',user, expirationDate,'/');
+  }
+
+  ngOnDestroy() {
+    
 
   }
 

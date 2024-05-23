@@ -11,4 +11,5 @@
     font-size: 1rem;
     margin:5px;
     font-weight: bolder;
+    word-wrap: break-word;
 }

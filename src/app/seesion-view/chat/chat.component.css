@@ -1,16 +1,48 @@
 .chat-logger {
     overflow-y: auto;
     text-align: justify;
-    height: 250px
+    height: 250px;
+    word-wrap: break-word;
 }
 
 .typing-box-send {
     margin:5px;
     display: flex;
+    flex-direction: column;
     gap:5px;
-    align-items: flex-end;
 }
 
 .send {
-    margin-bottom: 6px;
+   font-weight: bold;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: white;
+   margin-bottom: 4px;
+}
+
+.send button {
+    width: 100%;
+    background-color: orangered;
+    border-color: orangered;
+    color: white;
+    font-weight: bold;
+}
+
+.user {
+    font-weight: bold;
+    color:green;
+    font-size: 0.7rem;
+}
+
+.message {
+    word-wrap: break-word;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:0.7rem
+}
+
+.messages {
+    border-radius: 12px;
+    padding: 3px;
+    background-color: burlywood;
+    margin: 5px;
 }

@@ -14,13 +14,15 @@ export class DisplayPredictionComponent {
   radioSelect = 'pmga';
   keys:any= [];
   disableRadio = false;
-  timer = 45;
+  timer = 15;
 
   constructor() {}
 
   ngOnInit() {
     this.keys = Object.keys(this.predictionObject.predictionOptions);
+    if(!this.showUserList) {
     this.startTimer();
+    }
   }
 
   startTimer() {

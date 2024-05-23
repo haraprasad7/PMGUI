@@ -6,7 +6,7 @@ import { io } from "socket.io-client";
   providedIn: 'root'
 })
 export class GameComService {
-  private socket  = io('https://18.60.253.99:3000',  {rejectUnauthorized: false});
+  private socket  = io('https://pmgfantasy.link:3000',  {rejectUnauthorized: false});
   private user = {};
   private roomID = '';
   private sessionState:any = {};

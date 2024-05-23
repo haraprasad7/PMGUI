@@ -1,6 +1,7 @@
 <div #standing class="standing">
     <h4>Players</h4> 
-<div *ngFor="let item of keys;"> 
-  {{users[item].username}}&emsp;{{users[item].points}}
+<div class="item" *ngFor="let player of usersArray; let i = index"> 
+  <div class="playerName">{{i+1}}.{{player.username}}</div>
+  <div class="points">{{player.points}}</div>
 </div>
 </div>

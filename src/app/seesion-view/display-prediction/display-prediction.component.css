@@ -18,6 +18,7 @@
     font-size: 1rem;
     margin:5px;
     font-weight: bolder;
+    word-wrap: break-word;
 }
 
 .optiontext {
@@ -50,5 +51,16 @@
 
 .options-selected {
     font-weight: bold;
+
+}
+
+.count {
+    font-weight: bold;
+}
+
+.points {
+    font-size: 0.8rem;
+    color: red;
+    font-weight: bolder;
 
 }

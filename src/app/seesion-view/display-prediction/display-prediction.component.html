@@ -7,6 +7,9 @@
     <div class="predictionTitle">
         {{predictionObject.predictionTitle}}
     </div>
+    <div class="points">
+        {{predictionObject.predictionPoint}} points
+    </div>
     <div class="predictionOptions">
         <div class="options">
             <div *ngFor="let option of keys">
@@ -20,6 +23,7 @@
                 <div *ngIf="showUserList" class="users-vote">
                     <div class="user" *ngFor="let user of predictionObject.predictionOptions[option].usersList">
                     {{user.username}}</div>
+                    <span class="count">{{predictionObject.predictionOptions[option].usersList.length}}</span>
                 </div>
             </div>
         </div>

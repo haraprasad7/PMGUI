@@ -18,7 +18,10 @@ export class ChatComponent {
 
   ngOnInit() {
     this.gameComService.onMessage().subscribe(data => {
-      let message = data.user.username + " -- " + data.message;
+      let message = {
+        username: data.user.username,
+        message:data.message
+      };
       this.messages.push(message);
     })
   }

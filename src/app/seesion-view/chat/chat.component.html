@@ -1,7 +1,12 @@
 <div class="chat-window">
     <div #chatWindow class="chat-logger">
         <div *ngFor="let message of messages" class="messages">
-            {{message}}
+           <div class="user">
+            {{message.username}}
+           </div>
+           <div class="message">
+            {{message.message}}
+           </div>
         </div>
     </div>
     <div class="typing-box-send">
@@ -9,12 +14,12 @@
             <form #form="ngForm">
                 <textarea type="text" cols="40" 
                 rows="5" 
-                style="width:150px; height:30px;" maxlength="150" name="message" placeholder="type your message" [(ngModel)]="message">
+                style="width:215px; height:30px;" maxlength="250" name="message" placeholder="type your message" [(ngModel)]="message">
             </textarea>
             </form>
         </div>
         <div class="send">
-            <button mat-raised-button color="warn" (click)="sendMessage()"><span>&#8593;</span></button>
+            <button  (click)="sendMessage()"><span>SEND</span></button>
         </div>
     </div>
 </div>

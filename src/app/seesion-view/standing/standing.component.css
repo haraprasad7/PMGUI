@@ -1,6 +1,17 @@
 .standing {
     margin-right: 5px;
     overflow-y: auto;
-    text-align: right;
     height: 300px;
+}
+
+.item {
+    display: grid;
+    margin-left: 2px;
+    grid-template-columns: 3fr 1fr;
+    gap:5px;
+    font-size:0.7rem;
+}
+
+.points {
+    margin-left: 3px;
 }

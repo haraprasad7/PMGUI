@@ -6,21 +6,21 @@
     <div *ngIf="createPoll" class="create-poll">
         <div class="poll-title">
             <form #form="ngForm">
-                <input type="text" name="title" placeholder="Poll question" [(ngModel)]="pollTitle">
+                <input maxlength="350" type="text" name="title" placeholder="Poll question" [(ngModel)]="pollTitle">
             </form>
         </div>
         <div class="options">
             <div class="option" *ngIf="tracker > 0">
-                <input placeholder="Option A" [(ngModel)]="pollOptionsA">
+                <input maxlength="40" placeholder="Option A" [(ngModel)]="pollOptionsA">
             </div>
             <div class="option" *ngIf="tracker > 1">
-                <input placeholder="Option B" [(ngModel)]="pollOptionsB">
+                <input maxlength="40" placeholder="Option B" [(ngModel)]="pollOptionsB">
             </div>
             <div class="option" *ngIf="tracker > 2">
-                <input placeholder="Option C" [(ngModel)]="pollOptionsC">
+                <input maxlength="40" placeholder="Option C" [(ngModel)]="pollOptionsC">
             </div>
             <div class="option" *ngIf="tracker > 3">
-                <input placeholder="Option D" [(ngModel)]="pollOptionsD">
+                <input maxlength="40" placeholder="Option D" [(ngModel)]="pollOptionsD">
             </div>
         </div>
         <div class="buttons">

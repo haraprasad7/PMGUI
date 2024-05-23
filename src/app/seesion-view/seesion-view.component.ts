@@ -56,8 +56,10 @@ export class SeesionViewComponent {
       };
       newUser.username = data.user.username;
       newUser.points = data.user.points;
+      newUser.room = data.user.room;
       if(!data.user.cookie) {
       this.usersGroup = {...this.usersGroup, newUser};
+      console.log("added to users group");
       }
       let message = "[JOIN] " + data.user.username +  " Joined the game";
       this.logMessages.push(message);
@@ -134,7 +136,9 @@ export class SeesionViewComponent {
   }
 
   deletePoll() {
+    if(this.pollExists) {
     this.gameComService.deletePoll(this.user);
+    }
   }
 
   leaveRoom() {
